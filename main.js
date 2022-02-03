@@ -19,3 +19,5 @@ const nearest = MathC.nearestPoint(pointA, pointB, pointC, pointD)
 
 console.log(mediaPoint);
 console.log(distance2);
+
+console.log(nearest);

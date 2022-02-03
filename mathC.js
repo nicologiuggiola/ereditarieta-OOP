@@ -35,12 +35,17 @@ class MathC {
 
     }
     static nearestPoint(startingPoint, ...points){
-        for (const point of points) {
-  
+let nearest = points[0];
 
+for (let i = 0; i < points.length; i++) {
+    const point = points[i];
+    if (this.calculateDistance(startingPoint, point)< this.calculateDistance(startingPoint, nearest)) {
+        nearest= point;
+    }
+}
 
+return nearest;  
 
-        }
     }
 
 }
