@@ -18,8 +18,7 @@ class Point{
 
     distanceFromOrigin(){
         const origin = new Point(0,0);
-        const thisPoint = new Point (this.x, this.y);
-        const distance = MathC.calculateDistance(origin, thisPoint)
+        const distance = MathC.calculateDistance(origin, this)
         return distance;
     }
 
@@ -32,14 +31,13 @@ class Point{
     }
 
     nearestPoint(...points){
-        let startingPoint = new Point(this.x, this.y);
         let nearest = points[0];
 
         for (let i = 0; i < points.length; i++) {
             const point = points[i];
 
-            if (this.calculateDistance(startingPoint, point)< this.calculateDistance(startingPoint, nearest)) {
-                nearest= point;
+            if (MathC.calculateDistance(this, point)< MathC.calculateDistance(this, nearest)) {
+                nearest = point;
             }
         }
         return nearest;  
